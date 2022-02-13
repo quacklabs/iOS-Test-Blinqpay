@@ -70,5 +70,10 @@ class StoryCell: UICollectionViewCell {
             }
         }
         self.title.text = "Username"
+        layer.cornerRadius = 4
+        clipsToBounds = false
+        layer.masksToBounds = true
+        setNeedsLayout()
+        setNeedsDisplay()
     }
 }

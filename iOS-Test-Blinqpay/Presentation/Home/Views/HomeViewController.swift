@@ -64,9 +64,6 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 return UICollectionViewCell()
             }
             cell.configure(with: stories)
-            cell.layer.cornerRadius = 4
-            cell.setNeedsDisplay()
-            cell.setNeedsLayout()
         }
         return cell
     }

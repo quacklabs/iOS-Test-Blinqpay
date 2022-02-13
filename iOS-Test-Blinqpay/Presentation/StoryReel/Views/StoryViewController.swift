@@ -81,7 +81,9 @@ class StoryViewController: UIViewController {
     
     // Navigate to next page
     func move(to position: Int) {
-        let startingViewController: PreviewController = viewControllerAtIndex(index: position)!
+        guard let startingViewController = viewControllerAtIndex(index: position) else {
+            return
+        }
         let viewControllers = [startingViewController]
         pageViewController!.setViewControllers(viewControllers, direction: .forward, animated: true, completion: nil)
     }

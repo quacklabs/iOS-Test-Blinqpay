@@ -117,9 +117,12 @@ class PreviewController: UIViewController {
     @objc func tapOn(_ sender: UITapGestureRecognizer) {
         let center = UIScreen.main.bounds.width / 2
         let point = sender.location(in: self.view)
+        
         if point.x > center {
+            self.dispose()
             self.progress.skip()
         } else {
+            self.dispose()
             self.progress.rewind()
         }
     }
@@ -147,10 +150,11 @@ class PreviewController: UIViewController {
     
     private func dispose() {
         DispatchQueue.main.async {
-           self.progress.currentAnimationIndex = 0
-           self.progress.cancel()
-           self.progress.isPaused = true
-           self.resetPlayer()
+            self.observer?.invalidate()
+            self.progress.currentAnimationIndex = 0
+            self.progress.cancel()
+            self.progress.isPaused = true
+            self.resetPlayer()
         }
         
     }

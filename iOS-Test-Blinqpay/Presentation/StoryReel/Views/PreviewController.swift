@@ -178,6 +178,8 @@ class PreviewController: UIViewController {
         self.view.addViews([spinner])
         spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        spinner.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        spinner.widthAnchor.constraint(equalToConstant: 40).isActive = true
         self.view.bringSubviewToFront(spinner)
         
         if items[index].video == false {

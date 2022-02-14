@@ -75,10 +75,6 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if self.viewModel.users.count > 0 {
-            let user = self.viewModel.users[indexPath.row]
-            guard let stories = self.viewModel.stories[user] else {
-                return
-            }
             let view = StoryViewController(viewModel: self.viewModel)
             self.navigationController?.pushViewController(view, animated: true)
         }

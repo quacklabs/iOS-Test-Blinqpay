@@ -6,9 +6,13 @@ target 'iOS-Test-Blinqpay' do
   use_frameworks!
 
   # Pods for iOS-Test-Blinqpay
-  pod 'Signals'
   pod 'Firebase'
   pod 'Firebase/Firestore'
+  pod 'RxSwift', '6.5.0'
+  pod 'RxCocoa', '6.5.0'
+  pod 'RxDataSources', '~> 5.0'
+  pod 'Alamofire', '5.1'
+  
   # Optionally, include the Swift extensions if you're using Swift.
   pod 'FirebaseFirestoreSwift'
   target 'iOS-Test-BlinqpayTests' do

@@ -59,23 +59,23 @@ class StoryViewController: UIViewController {
     
     func viewControllerAtIndex(index: Int) -> PreviewController? {
         
-        if self.viewModel.stories.count == 0 || index >= self.viewModel.stories.count {
-            return nil
-        }
- 
+//        if self.viewModel.stories.count == 0 || index >= self.viewModel.stories.count {
+//            return nil
+//        }
+
         // Create a new view controller and pass suitable data.
-        
-        let user = self.viewModel.users[index]
-        guard let stories = self.viewModel.stories[user] else {
-            return nil
-        }
-        let vc = PreviewController(items: stories)
+
+//        let user = self.viewModel.users[index]
+//        guard let stories = self.viewModel.stories[user] else {
+//            return nil
+//        }
+        let vc = PreviewController(items: StoryGroup(user_id: "", items: []).items)
         vc.pageIndex = index
         currentIndex = index
         vc.view.transform = CGAffineTransform(scaleX: 1.4, y: 1.4)
-        vc.forwardTo.subscribe(with: self) { [weak self] (position) in
-            vc.dismiss(animated: true, completion: { self?.move(to: position) })
-        }
+//        vc.forwardTo.subscribe(with: self) { [weak self] (position) in
+//            vc.dismiss(animated: true, completion: { self?.move(to: position) })
+//        }
         return vc
     }
     
@@ -112,9 +112,9 @@ extension StoryViewController: UIPageViewControllerDataSource, UIPageViewControl
             return nil
         }
         index += 1
-        if (index == self.viewModel.stories.count) {
-            return nil
-        }
+//        if (index == self.viewModel.stories.count) {
+//            return nil
+//        }
         return viewControllerAtIndex(index: index)
     }
 }

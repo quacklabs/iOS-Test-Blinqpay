@@ -9,6 +9,20 @@
 /* Begin PBXBuildFile section */
 		C353766C7C9132BEB3002375 /* Pods_iOS_Test_Blinqpay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E35A3CFFE4A4347228ACCFE3 /* Pods_iOS_Test_Blinqpay.framework */; };
 		CC44FCA715EAB2E8949FB58E /* Pods_iOS_Test_BlinqpayTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC6AC2F9C0170DCCEACEAC00 /* Pods_iOS_Test_BlinqpayTests.framework */; };
+		DE54346027ECF2F300CBF2AF /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54345F27ECF2F300CBF2AF /* Response.swift */; };
+		DE54346227ECF34700CBF2AF /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54346127ECF34700CBF2AF /* Request.swift */; };
+		DE54346427ECF4F600CBF2AF /* NetworkUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54346327ECF4F600CBF2AF /* NetworkUtils.swift */; };
+		DE54346627ECF54100CBF2AF /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54346527ECF54100CBF2AF /* Network.swift */; };
+		DE54346927ECF81A00CBF2AF /* Blinq_API_Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54346827ECF81A00CBF2AF /* Blinq_API_Client.swift */; };
+		DE54346D27ECF92200CBF2AF /* Network_Service_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54346C27ECF92200CBF2AF /* Network_Service_Tests.swift */; };
+		DE54346F27ECFBFD00CBF2AF /* HTTPEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54346E27ECFBFD00CBF2AF /* HTTPEncoding.swift */; };
+		DE54347227ED18A700CBF2AF /* StoryReel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54347127ED18A700CBF2AF /* StoryReel.swift */; };
+		DE54347627EDDB9F00CBF2AF /* MyStoryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54347527EDDB9E00CBF2AF /* MyStoryButton.swift */; };
+		DE54347827EDDBDF00CBF2AF /* UIStyleGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54347727EDDBDF00CBF2AF /* UIStyleGuide.swift */; };
+		DE54347A27EDDCA200CBF2AF /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54347927EDDCA200CBF2AF /* UIFont+Extension.swift */; };
+		DE54347C27EDDDBE00CBF2AF /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54347B27EDDDBE00CBF2AF /* Color.swift */; };
+		DE54347E27F181BB00CBF2AF /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54347D27F181BA00CBF2AF /* Story.swift */; };
+		DE54348127F18C3A00CBF2AF /* StoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE54348027F18C3A00CBF2AF /* StoryService.swift */; };
 		DEC0A69D27B668310003A9BE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC0A69C27B668310003A9BE /* AppDelegate.swift */; };
 		DEC0A6A627B668450003A9BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEC0A6A527B668450003A9BE /* Assets.xcassets */; };
 		DEC0A6A927B668450003A9BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEC0A6A727B668450003A9BE /* LaunchScreen.storyboard */; };
@@ -17,7 +31,6 @@
 		DEC0A6CD27B678A70003A9BE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC0A6CC27B678A70003A9BE /* HomeViewController.swift */; };
 		DEC0A6D227B679350003A9BE /* StoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC0A6D127B679350003A9BE /* StoriesViewModel.swift */; };
 		DEC0A6D527B679A00003A9BE /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC0A6D427B679A00003A9BE /* UIViewController+Extension.swift */; };
-		DEC0A6D727B67D840003A9BE /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC0A6D627B67D840003A9BE /* Story.swift */; };
 		DEC0A6D927B67F5B0003A9BE /* StoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC0A6D827B67F5B0003A9BE /* StoryCell.swift */; };
 		DEE444C527B7B7AA00D6D9AD /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE444C427B7B7AA00D6D9AD /* Array+Extension.swift */; };
 		DEE444C727B7BC5600D6D9AD /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE444C627B7BC5600D6D9AD /* ImageLoader.swift */; };
@@ -45,6 +58,20 @@
 		20A4D8131C3BC08662863F7D /* Pods-iOS-Test-Blinqpay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Test-Blinqpay.release.xcconfig"; path = "Target Support Files/Pods-iOS-Test-Blinqpay/Pods-iOS-Test-Blinqpay.release.xcconfig"; sourceTree = "<group>"; };
 		42AC68E5840EEBE73292BE2A /* Pods-iOS-Test-BlinqpayTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Test-BlinqpayTests.release.xcconfig"; path = "Target Support Files/Pods-iOS-Test-BlinqpayTests/Pods-iOS-Test-BlinqpayTests.release.xcconfig"; sourceTree = "<group>"; };
 		453A4A1F3B7BBB6FE8F9BD92 /* Pods-iOS-Test-BlinqpayTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS-Test-BlinqpayTests.debug.xcconfig"; path = "Target Support Files/Pods-iOS-Test-BlinqpayTests/Pods-iOS-Test-BlinqpayTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DE54345F27ECF2F300CBF2AF /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		DE54346127ECF34700CBF2AF /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		DE54346327ECF4F600CBF2AF /* NetworkUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUtils.swift; sourceTree = "<group>"; };
+		DE54346527ECF54100CBF2AF /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		DE54346827ECF81A00CBF2AF /* Blinq_API_Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Blinq_API_Client.swift; sourceTree = "<group>"; };
+		DE54346C27ECF92200CBF2AF /* Network_Service_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network_Service_Tests.swift; sourceTree = "<group>"; };
+		DE54346E27ECFBFD00CBF2AF /* HTTPEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPEncoding.swift; sourceTree = "<group>"; };
+		DE54347127ED18A700CBF2AF /* StoryReel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryReel.swift; sourceTree = "<group>"; };
+		DE54347527EDDB9E00CBF2AF /* MyStoryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyStoryButton.swift; sourceTree = "<group>"; };
+		DE54347727EDDBDF00CBF2AF /* UIStyleGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStyleGuide.swift; sourceTree = "<group>"; };
+		DE54347927EDDCA200CBF2AF /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		DE54347B27EDDDBE00CBF2AF /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		DE54347D27F181BA00CBF2AF /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
+		DE54348027F18C3A00CBF2AF /* StoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryService.swift; sourceTree = "<group>"; };
 		DEC0A69927B668310003A9BE /* iOS-Test-Blinqpay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS-Test-Blinqpay.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEC0A69C27B668310003A9BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DEC0A6A527B668450003A9BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,7 +84,6 @@
 		DEC0A6CC27B678A70003A9BE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		DEC0A6D127B679350003A9BE /* StoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesViewModel.swift; sourceTree = "<group>"; };
 		DEC0A6D427B679A00003A9BE /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
-		DEC0A6D627B67D840003A9BE /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		DEC0A6D827B67F5B0003A9BE /* StoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCell.swift; sourceTree = "<group>"; };
 		DEE444C427B7B7AA00D6D9AD /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		DEE444C627B7BC5600D6D9AD /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
@@ -92,6 +118,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DE54345E27ECF1EF00CBF2AF /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				DE54345F27ECF2F300CBF2AF /* Response.swift */,
+				DE54346127ECF34700CBF2AF /* Request.swift */,
+				DE54346327ECF4F600CBF2AF /* NetworkUtils.swift */,
+				DE54346527ECF54100CBF2AF /* Network.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		DE54346727ECF80200CBF2AF /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				DE54346827ECF81A00CBF2AF /* Blinq_API_Client.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		DE54347027ED018C00CBF2AF /* MockData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MockData;
+			sourceTree = "<group>";
+		};
+		DE54347F27F18C2800CBF2AF /* Stories */ = {
+			isa = PBXGroup;
+			children = (
+				DE54348027F18C3A00CBF2AF /* StoryService.swift */,
+			);
+			path = Stories;
+			sourceTree = "<group>";
+		};
 		DEC0A69027B668310003A9BE = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +175,7 @@
 		DEC0A69B27B668310003A9BE /* iOS-Test-Blinqpay */ = {
 			isa = PBXGroup;
 			children = (
+				DE54346727ECF80200CBF2AF /* Entities */,
 				DEC0A6CA27B678690003A9BE /* Presentation */,
 				DEC0A6C927B678600003A9BE /* Services */,
 				DEC0A6C827B6784B0003A9BE /* Helpers */,
@@ -130,8 +191,10 @@
 		DEC0A6B227B668460003A9BE /* iOS-Test-BlinqpayTests */ = {
 			isa = PBXGroup;
 			children = (
+				DE54347027ED018C00CBF2AF /* MockData */,
 				DEC0A6B327B668460003A9BE /* iOS_Test_BlinqpayTests.swift */,
 				DEC0A6B527B668460003A9BE /* Info.plist */,
+				DE54346C27ECF92200CBF2AF /* Network_Service_Tests.swift */,
 			);
 			path = "iOS-Test-BlinqpayTests";
 			sourceTree = "<group>";
@@ -143,6 +206,9 @@
 				DEC0A6D327B679620003A9BE /* Extensions */,
 				DEE444C627B7BC5600D6D9AD /* ImageLoader.swift */,
 				DEE444C827B7BCFE00D6D9AD /* ImageCache.swift */,
+				DE54346E27ECFBFD00CBF2AF /* HTTPEncoding.swift */,
+				DE54347727EDDBDF00CBF2AF /* UIStyleGuide.swift */,
+				DE54347B27EDDDBE00CBF2AF /* Color.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -150,6 +216,8 @@
 		DEC0A6C927B678600003A9BE /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				DE54347F27F18C2800CBF2AF /* Stories */,
+				DE54345E27ECF1EF00CBF2AF /* Network */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -176,7 +244,6 @@
 		DEC0A6CE27B679060003A9BE /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				DEC0A6D627B67D840003A9BE /* Story.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -185,7 +252,6 @@
 			isa = PBXGroup;
 			children = (
 				DEC0A6CC27B678A70003A9BE /* HomeViewController.swift */,
-				DEC0A6D827B67F5B0003A9BE /* StoryCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -205,6 +271,7 @@
 				DEE444CA27B7C25600D6D9AD /* UIColor.swift */,
 				DEE444CC27B7C2AB00D6D9AD /* String+Extension.swift */,
 				DEE444D927B9095A00D6D9AD /* UIView+Extension.swift */,
+				DE54347927EDDCA200CBF2AF /* UIFont+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -239,7 +306,10 @@
 			isa = PBXGroup;
 			children = (
 				DEE444CE27B7DC5500D6D9AD /* StoryViewController.swift */,
+				DEC0A6D827B67F5B0003A9BE /* StoryCell.swift */,
 				DEE444D327B7FE6D00D6D9AD /* PreviewController.swift */,
+				DE54347127ED18A700CBF2AF /* StoryReel.swift */,
+				DE54347527EDDB9E00CBF2AF /* MyStoryButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -247,6 +317,7 @@
 		DEE444D827B8FBE800D6D9AD /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				DE54347D27F181BA00CBF2AF /* Story.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -440,20 +511,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEE444CF27B7DC5500D6D9AD /* StoryViewController.swift in Sources */,
+				DE54348127F18C3A00CBF2AF /* StoryService.swift in Sources */,
 				DEC0A6D527B679A00003A9BE /* UIViewController+Extension.swift in Sources */,
 				DEE444CD27B7C2AB00D6D9AD /* String+Extension.swift in Sources */,
 				DEE444DA27B9095A00D6D9AD /* UIView+Extension.swift in Sources */,
+				DE54346427ECF4F600CBF2AF /* NetworkUtils.swift in Sources */,
 				DEC0A69D27B668310003A9BE /* AppDelegate.swift in Sources */,
 				DEC0A6D227B679350003A9BE /* StoriesViewModel.swift in Sources */,
 				DEE444C927B7BCFE00D6D9AD /* ImageCache.swift in Sources */,
 				DEC0A6CD27B678A70003A9BE /* HomeViewController.swift in Sources */,
+				DE54346027ECF2F300CBF2AF /* Response.swift in Sources */,
 				DEE444C527B7B7AA00D6D9AD /* Array+Extension.swift in Sources */,
-				DEC0A6D727B67D840003A9BE /* Story.swift in Sources */,
+				DE54346627ECF54100CBF2AF /* Network.swift in Sources */,
 				DEE444C727B7BC5600D6D9AD /* ImageLoader.swift in Sources */,
+				DE54346227ECF34700CBF2AF /* Request.swift in Sources */,
 				DEE444D427B7FE6D00D6D9AD /* PreviewController.swift in Sources */,
 				DEE444D227B7FDF600D6D9AD /* SegmentedProgressBar.swift in Sources */,
+				DE54347C27EDDDBE00CBF2AF /* Color.swift in Sources */,
 				DEC0A6D927B67F5B0003A9BE /* StoryCell.swift in Sources */,
+				DE54347A27EDDCA200CBF2AF /* UIFont+Extension.swift in Sources */,
+				DE54347827EDDBDF00CBF2AF /* UIStyleGuide.swift in Sources */,
+				DE54346927ECF81A00CBF2AF /* Blinq_API_Client.swift in Sources */,
+				DE54347E27F181BB00CBF2AF /* Story.swift in Sources */,
+				DE54347627EDDB9F00CBF2AF /* MyStoryButton.swift in Sources */,
+				DE54347227ED18A700CBF2AF /* StoryReel.swift in Sources */,
 				DEE444CB27B7C25600D6D9AD /* UIColor.swift in Sources */,
+				DE54346F27ECFBFD00CBF2AF /* HTTPEncoding.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,6 +544,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE54346D27ECF92200CBF2AF /* Network_Service_Tests.swift in Sources */,
 				DEC0A6B427B668460003A9BE /* iOS_Test_BlinqpayTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -607,14 +691,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 22FN4D2YAD;
+				DEVELOPMENT_TEAM = GKZ7A5B532;
 				INFOPLIST_FILE = "iOS-Test-Blinqpay/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.blinqpay.blinqchat;
+				PRODUCT_BUNDLE_IDENTIFIER = com.blinqchat.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -627,14 +711,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 22FN4D2YAD;
+				DEVELOPMENT_TEAM = GKZ7A5B532;
 				INFOPLIST_FILE = "iOS-Test-Blinqpay/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.blinqpay.blinqchat;
+				PRODUCT_BUNDLE_IDENTIFIER = com.blinqchat.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

@@ -3,21 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>876425414183-n0amudeec8sa8r03naas9r7u46i21hb7.apps.googleusercontent.com</string>
+	<string>159509376037-1ue6e2iqg7fjfjspm3qjlhvdlgtvg7jl.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.876425414183-n0amudeec8sa8r03naas9r7u46i21hb7</string>
+	<string>com.googleusercontent.apps.159509376037-1ue6e2iqg7fjfjspm3qjlhvdlgtvg7jl</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>159509376037-7hi3o3d0j2nf2r17d10hq7abmaou0d3n.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
-	<string>AIzaSyCKglY0rH0T7r97A5TpThH0uJrHerxtLjs</string>
+	<string>AIzaSyBxzxa_jiEt8W0tRFbYmDZQ-MTk19XC_jE</string>
 	<key>GCM_SENDER_ID</key>
-	<string>876425414183</string>
+	<string>159509376037</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.blinqpay.blinqchat</string>
+	<string>com.blinqchat.ios</string>
 	<key>PROJECT_ID</key>
-	<string>blinqstory</string>
+	<string>blynq-13e9a</string>
 	<key>STORAGE_BUCKET</key>
-	<string>blinqstory.appspot.com</string>
+	<string>blynq-13e9a.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,8 +31,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:876425414183:ios:bcaff1afc2041c7cdaf002</string>
+	<string>1:159509376037:ios:a9e58d4360cbfd437963cc</string>
 	<key>DATABASE_URL</key>
-	<string>https://blinqstory-default-rtdb.firebaseio.com</string>
+	<string>https://blynq-13e9a.firebaseio.com</string>
 </dict>
 </plist>

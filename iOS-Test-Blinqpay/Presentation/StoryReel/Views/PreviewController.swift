@@ -9,8 +9,7 @@ import UIKit
 import AVFoundation
 import AVKit
 import CoreMedia
-import Signals
-
+import RxSwift
 
 class PreviewController: UIViewController {
     
@@ -44,7 +43,6 @@ class PreviewController: UIViewController {
     private var items: [Story]!
     var progress: SegmentedProgressBar!
     var player: AVPlayer!
-    let forwardTo = Signal<(Int)>()
     var observer: NSKeyValueObservation?
     
     lazy var spinner:  UIActivityIndicatorView = {
@@ -84,21 +82,21 @@ class PreviewController: UIViewController {
         view.bringSubviewToFront(progress)
         view.bringSubviewToFront(close)
         
-        progress.changed.subscribe(with: self) { [weak self] (index) in
-            self?.observer?.invalidate()
-            self?.playVideoOrLoadImage(index: index)
-        }
-        
-        progress.finish.subscribe(with: self) {
-            self.observer?.invalidate()
-            if self.pageIndex == (self.items.count - 1) {
-                self.dismiss(animated: true, completion: nil)
-            }
-            else {
-                let index = self.pageIndex + 1
-                self.forwardTo => (index)
-            }
-        }
+//        progress.changed.subscribe(with: self) { [weak self] (index) in
+//            self?.observer?.invalidate()
+//            self?.playVideoOrLoadImage(index: index)
+//        }
+//        
+//        progress.finish.subscribe(with: self) {
+//            self.observer?.invalidate()
+//            if self.pageIndex == (self.items.count - 1) {
+//                self.dismiss(animated: true, completion: nil)
+//            }
+//            else {
+//                let index = self.pageIndex + 1
+//                self.forwardTo => (index)
+//            }
+//        }
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapOn(_:)))
         tapGesture.numberOfTapsRequired = 1
@@ -108,10 +106,10 @@ class PreviewController: UIViewController {
         imageView.addGestureRecognizer(tapGesture)
         view.addGestureRecognizer(tapGesture)
         
-        close.onTouchUpInside.subscribe(with: self) {
-            self.dispose()
-            self.dismiss(animated: true, completion: nil)
-        }
+//        close.onTouchUpInside.subscribe(with: self) {
+//            self.dispose()
+//            self.dismiss(animated: true, completion: nil)
+//        }
     }
     
     @objc func tapOn(_ sender: UITapGestureRecognizer) {
@@ -162,14 +160,14 @@ class PreviewController: UIViewController {
     // MARK: Private func
     private func getDuration(at index: Int) -> TimeInterval {
         var retVal: TimeInterval = 5.0
-        if items[index].video == false {
-            retVal = 5.0
-        } else {
-            guard let url = NSURL(string: items[index].url) as URL? else { return retVal }
-            let asset = AVAsset(url: url)
-            let duration = asset.duration
-            retVal = CMTimeGetSeconds(duration)
-        }
+//        if items[index].video == false {
+//            retVal = 5.0
+//        } else {
+//            guard let url = NSURL(string: items[index].url) as URL? else { return retVal }
+//            let asset = AVAsset(url: url)
+//            let duration = asset.duration
+//            retVal = CMTimeGetSeconds(duration)
+//        }
         return retVal
     }
     
@@ -182,52 +180,52 @@ class PreviewController: UIViewController {
         spinner.widthAnchor.constraint(equalToConstant: 40).isActive = true
         self.view.bringSubviewToFront(spinner)
         
-        if items[index].video == false {
-            progress.duration = 5
-            self.imageView.isHidden = false
-            self.videoView.isHidden = true
-            guard let url = URL(string: items[index].url) else {
-                return
-            }
-            self.imageView.image = nil
-            ImageLoader.shared.loadImage(from: url) { (image) in
-                DispatchQueue.main.async {
-                    self.spinner.removeFromSuperview()
-                    self.imageView.image = image
-                    self.progress.play(index: index)
-                }
-            }
-        } else {
-            self.imageView.isHidden = true
-            self.videoView.isHidden = false
-            
-            resetPlayer()
-            guard let url = NSURL(string: items[index].url) as URL? else {return}
-            let asset = AVAsset(url: url)
-            let assetKeys = ["playable"]
-            
-            let playerItem = AVPlayerItem(asset: asset, automaticallyLoadedAssetKeys: assetKeys)
-            
-            self.observer = playerItem.observe(\.status, options:  [.new, .old], changeHandler: { (playerItem, change) in
-                if playerItem.status == .readyToPlay {
-                    //Do your work here
-                    let duration = asset.duration
-                    let durationTime = CMTimeGetSeconds(duration)
-                    
-                    self.progress.duration = durationTime
-                    
-                    self.player.play()
-                    self.spinner.removeFromSuperview()
-                    self.progress.play(index: index)
-                }
-            })
-            player = AVPlayer(playerItem: playerItem)
-            
-            let videoLayer = AVPlayerLayer(player: self.player)
-            videoLayer.frame = view.bounds
-            videoLayer.videoGravity = .resizeAspect
-            self.videoView.layer.addSublayer(videoLayer)
-        }
+//        if items[index].video == false {
+//            progress.duration = 5
+//            self.imageView.isHidden = false
+//            self.videoView.isHidden = true
+//            guard let url = URL(string: items[index].url) else {
+//                return
+//            }
+//            self.imageView.image = nil
+//            ImageLoader.shared.loadImage(from: url) { (image) in
+//                DispatchQueue.main.async {
+//                    self.spinner.removeFromSuperview()
+//                    self.imageView.image = image
+//                    self.progress.play(index: index)
+//                }
+//            }
+//        } else {
+//            self.imageView.isHidden = true
+//            self.videoView.isHidden = false
+//            
+//            resetPlayer()
+//            guard let url = NSURL(string: items[index].url) as URL? else {return}
+//            let asset = AVAsset(url: url)
+//            let assetKeys = ["playable"]
+//            
+//            let playerItem = AVPlayerItem(asset: asset, automaticallyLoadedAssetKeys: assetKeys)
+//            
+//            self.observer = playerItem.observe(\.status, options:  [.new, .old], changeHandler: { (playerItem, change) in
+//                if playerItem.status == .readyToPlay {
+//                    //Do your work here
+//                    let duration = asset.duration
+//                    let durationTime = CMTimeGetSeconds(duration)
+//                    
+//                    self.progress.duration = durationTime
+//                    
+//                    self.player.play()
+//                    self.spinner.removeFromSuperview()
+//                    self.progress.play(index: index)
+//                }
+//            })
+//            player = AVPlayer(playerItem: playerItem)
+//            
+//            let videoLayer = AVPlayerLayer(player: self.player)
+//            videoLayer.frame = view.bounds
+//            videoLayer.videoGravity = .resizeAspect
+//            self.videoView.layer.addSublayer(videoLayer)
+//        }
     }
     
     private func resetPlayer() {

@@ -8,48 +8,44 @@
 
 import Foundation
 import Firebase
-import Signals
+import RxSwift
+import RxCocoa
+
+enum StoryCellType {
+    case normal(stories: StoryGroup)
+}
 
 class StoriesViewModel {
-//    var lastId: String?
-    var stories: Dictionary<String, [Story]> = Dictionary<String, [Story]>()
-    var users: [String] = [String]()
+
+    var sections: [StoryGroup] = []
+    let disposeBag = DisposeBag()
     
-    let db = Firestore.firestore()
-    let load = Signal<()>()
+    let userID = "7C34hG7C8CZllF0WvI6fSZfJIA43"
     
-    func getStories(start: Int) {
-        db.collection("story").getDocuments { (snapshot, error) in
-            if let err = error {
-                print("error: \(err)")
-            } else {
-                if let documents = snapshot?.documents {
-                    
-                    for user in documents {
-                        let dict = user.data()
-                        do {
-                            let stories = dict["stories"]
-                            if let json = try? JSONSerialization.data(withJSONObject: stories!, options: [.sortedKeys]), let obj = try? JSONDecoder().decode([Story].self, from: json) {
-                            
-                                if let _ = self.stories["\(user.documentID)"] {
-                                    self.stories["\(user.documentID)"]!.appendDistinct(contentsOf: obj) { (old, new) -> Bool in
-                                        return old.id != new.id
-                                    }
-                                } else {
-                                    self.stories["\(user.documentID)"] = obj
-                                }
-                                
-                                self.users.appendDistinct(contentsOf: [user.documentID]) { (old, new) -> Bool in
-                                    return old != new
-                                }
-                            }
-                        } catch {
-                            print("error: \(error)")
-                        }
-                    }
-                    self.load => ()
-                }
-            }
-        }
+    let service: StoryService
+    
+    var story_reel: Observable<[StoryGroup]> {
+        return reels.asObservable()
+    }
+    
+    private let reels = BehaviorRelay<[StoryGroup]>(value: [])
+    
+    init(service: StoryService = StoryService()) {
+        self.service = service
+    }
+    
+    func setupReel() {
+        
+        service.loadStoryReel(userId: userID).subscribe(onNext: { (stories) in
+            self.reels.accept(stories)
+        }, onError: { (error) in
+            print("error:  \(error)")
+        }, onCompleted: {
+            print("complete")
+        }).disposed(by: disposeBag)
+    }
+    
+    func loadStories(users: [String]) {
+        
     }
 }

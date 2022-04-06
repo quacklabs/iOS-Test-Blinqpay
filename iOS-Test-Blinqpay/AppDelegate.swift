@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         FirebaseApp.configure()
         let controller = HomeViewController()
-        controller.viewModel = StoriesViewModel()
+//        controller.viewModel = StoriesViewModel()
         self.window?.rootViewController = controller.wrapInNavigation()
         self.window?.makeKeyAndVisible()
         return true

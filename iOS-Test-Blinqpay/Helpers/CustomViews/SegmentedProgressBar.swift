@@ -7,12 +7,11 @@
 //
 import Foundation
 import UIKit
-import Signals
 
 class SegmentedProgressBar: UIView {
     
-    var finish = Signal<()>()
-    var changed = Signal<(Int)>()
+//    var finish = Signal<()>()
+//    var changed = Signal<(Int)>()
     
     var topColor = UIColor.gray {
         didSet {
@@ -117,9 +116,9 @@ class SegmentedProgressBar: UIView {
     private func next() {
         let newIndex = self.currentAnimationIndex + 1
         if newIndex < self.segments.count {
-            self.changed => (newIndex)
+//            self.changed => (newIndex)
         } else {
-            self.finish => ()
+//            self.finish => ()
         }
         return
     }
@@ -138,7 +137,7 @@ class SegmentedProgressBar: UIView {
         let newIndex = max(currentAnimationIndex - 1, 0)
         let prevSegment = segments[newIndex]
         prevSegment.topSegmentView.frame.size.width = 0
-        self.changed => (newIndex)
+//        self.changed => (newIndex)
 //        self.animate(animationIndex: newIndex)
     }
     
